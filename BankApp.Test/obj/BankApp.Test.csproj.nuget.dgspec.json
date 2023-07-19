@@ -1,0 +1,414 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Test\\BankApp.Test.csproj": {}
+  },
+  "projects": {
+    "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Business\\BankApp.Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Business\\BankApp.Business.csproj",
+        "projectName": "BankApp.Business",
+        "projectPath": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Business\\BankApp.Business.csproj",
+        "packagesPath": "C:\\Users\\jaych\\.nuget\\packages\\",
+        "outputPath": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Business\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jaych\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Core\\BankApp.Core.csproj": {
+                "projectPath": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Core\\BankApp.Core.csproj"
+              },
+              "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Data\\BankApp.Data.csproj": {
+                "projectPath": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Data\\BankApp.Data.csproj"
+              },
+              "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Model\\BankApp.Model.csproj": {
+                "projectPath": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Model\\BankApp.Model.csproj"
+              },
+              "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Repository\\BankApp.Repository.csproj": {
+                "projectPath": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Repository\\BankApp.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Core\\BankApp.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Core\\BankApp.Core.csproj",
+        "projectName": "BankApp.Core",
+        "projectPath": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Core\\BankApp.Core.csproj",
+        "packagesPath": "C:\\Users\\jaych\\.nuget\\packages\\",
+        "outputPath": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jaych\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Data\\BankApp.Data.csproj": {
+                "projectPath": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Data\\BankApp.Data.csproj"
+              },
+              "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Model\\BankApp.Model.csproj": {
+                "projectPath": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Model\\BankApp.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Data\\BankApp.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Data\\BankApp.Data.csproj",
+        "projectName": "BankApp.Data",
+        "projectPath": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Data\\BankApp.Data.csproj",
+        "packagesPath": "C:\\Users\\jaych\\.nuget\\packages\\",
+        "outputPath": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jaych\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Model\\BankApp.Model.csproj": {
+                "projectPath": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Model\\BankApp.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Model\\BankApp.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Model\\BankApp.Model.csproj",
+        "projectName": "BankApp.Model",
+        "projectPath": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Model\\BankApp.Model.csproj",
+        "packagesPath": "C:\\Users\\jaych\\.nuget\\packages\\",
+        "outputPath": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jaych\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Repository\\BankApp.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Repository\\BankApp.Repository.csproj",
+        "projectName": "BankApp.Repository",
+        "projectPath": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Repository\\BankApp.Repository.csproj",
+        "packagesPath": "C:\\Users\\jaych\\.nuget\\packages\\",
+        "outputPath": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jaych\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Data\\BankApp.Data.csproj": {
+                "projectPath": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Data\\BankApp.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Test\\BankApp.Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Test\\BankApp.Test.csproj",
+        "projectName": "BankApp.Test",
+        "projectPath": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Test\\BankApp.Test.csproj",
+        "packagesPath": "C:\\Users\\jaych\\.nuget\\packages\\",
+        "outputPath": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Test\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jaych\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Business\\BankApp.Business.csproj": {
+                "projectPath": "C:\\D\\MyRepository\\.Net\\BankApp\\BankApp.Business\\BankApp.Business.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.5.0, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.3, )"
+            },
+            "NUnit.Analyzers": {
+              "target": "Package",
+              "version": "[3.6.1, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.4.2, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
