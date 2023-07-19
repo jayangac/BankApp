@@ -2,11 +2,6 @@
 using BankApp.Data.EntityModels;
 using BankApp.Model.Models;
 using BankApp.Repository.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace BankApp.Repository.Implementations
@@ -32,7 +27,7 @@ namespace BankApp.Repository.Implementations
             return Math.Round(balance, 2);
         }
 
-        public void Deposit(string accName, int accId, DateTime traDate, string traType, decimal amount)
+        public bool Deposit(string accName, int accId, DateTime traDate, string traType, decimal amount)
         {
             try
             {
@@ -46,28 +41,31 @@ namespace BankApp.Repository.Implementations
                     Amount = Math.Round(amount, 2)
                 };
                 _context.Transactions.Add(transaction);
-                _context.SaveChanges();
+               
+                return _context.SaveChanges() > 0;
             }
             catch (Exception)
             {
-
+                return false;
                 throw;
             }
         }
 
-        public void Withdraw(string accName, int accId, DateTime traDate, string traType, decimal amount)
+        public bool Withdraw(string accName, int accId, DateTime traDate, string traType, decimal amount)
         {
             try
             {
+                var result = false;
                 var balance = CalculateAccountBalance(accName);
                 if (balance == 0)
                 {
                     Console.WriteLine("Insuffient balance\n");
+                    result = false;
                 }
                 else if (balance < amount)
                 {
                     Console.WriteLine("Insuffient balance\n");
-
+                    result = false;
                 }
                 else
                 {
@@ -81,12 +79,13 @@ namespace BankApp.Repository.Implementations
                         Amount = Math.Round(amount, 2)
                     };
                     _context.Transactions.Add(transaction);
-                    _context.SaveChanges();
+                    result = _context.SaveChanges() > 0;
                 }
+                return result;
             }
             catch (Exception)
             {
-
+                return false;
                 throw;
             }
         }
@@ -143,12 +142,14 @@ namespace BankApp.Repository.Implementations
                 throw;
             }
         }
+
         public List<InterestDto> PrintStatement(string accName, int month)
         {
             try
             {
                 var isStatementAvailable = _context.Transactions.Any(x => x.Account.AccountName == accName && x.TransactDate.Month == month);
                 var statements = new List<InterestDto>();
+                //calculate initial balance
                 if (isStatementAvailable)
                 {
                     var currentMonthTransaction = _context.Transactions.
@@ -175,6 +176,7 @@ namespace BankApp.Repository.Implementations
                         };
                         statements.Add(statment);
                     }
+                    //get interest
                     var interest = CalculateInterest(accName, month, statements);
                     statements.Add(interest);
                 }
@@ -197,7 +199,7 @@ namespace BankApp.Repository.Implementations
                 var allTranactions = new List<CalculateInterestDto>();
                 var firstDateOfMonth = _accountRepository.GetCurrentMonthFirstDate(month);
                 var lastBalanceOfMonth = trasactions.OrderByDescending(x => x.Id).FirstOrDefault().Balance;
-
+                //calculate transaction per day
                 foreach (var items in trasactions.GroupBy(x => x.TransactDate))
                 {
                     var eodBalance = default(decimal);
@@ -221,6 +223,7 @@ namespace BankApp.Repository.Implementations
                     };
                     allTranactions.Add(eodTranaction);
                 }
+                //calculate interest
                 var AnnualizedInterest = allTranactions.Sum(x => x.AnnualizedInterest) / 365;
                 var interest = new InterestDto
                 {
@@ -235,7 +238,6 @@ namespace BankApp.Repository.Implementations
             }
             catch (Exception)
             {
-
                 throw;
             }
         }

@@ -1,9 +1,5 @@
-using BankApp.Business.Implementations;
-using BankApp.Business.Interfaces;
 using BankApp.Data.BaseOperation;
 using BankApp.Repository.Implementations;
-using BankApp.Repository.Interfaces;
-using Microsoft.EntityFrameworkCore;
 
 namespace BankApp.Test
 {
@@ -11,14 +7,14 @@ namespace BankApp.Test
     public class AccountRepositoryTest
     {
         private BankDbContext _dbContext { get; set; }
-        private AccountRepository account;
+        private AccountRepository _account;
 
         [SetUp]
         public void SetUp()
         {
             // initialize here
             _dbContext = new BankDbContext();
-            account = new AccountRepository(_dbContext);
+            _account = new AccountRepository(_dbContext);
         }
 
         [Test]
@@ -28,7 +24,7 @@ namespace BankApp.Test
             string accountName = "BOC";
 
             // Act
-            var reponse = account.CheckAccountExist(accountName);
+            var reponse = _account.CheckAccountExist(accountName);
 
             // Assert
             Assert.That(reponse, Is.EqualTo(false));
@@ -42,7 +38,7 @@ namespace BankApp.Test
             string accountName = "UOB";
 
             // Act
-            var reponse = account.CheckAccountExist(accountName);
+            var reponse = _account.CheckAccountExist(accountName);
 
             // Assert
             Assert.That(reponse, Is.EqualTo(true));
@@ -56,7 +52,7 @@ namespace BankApp.Test
             string accountName = "NTB", traType = "D";
 
             // Act
-            var reponse = account.CreateAccount(accountName, traType);
+            var reponse = _account.CreateAccount(accountName, traType);
 
             // Assert
             Assert.That(reponse, Is.EqualTo(true));
@@ -70,7 +66,7 @@ namespace BankApp.Test
             string accountName = "JPM", traType = "W";
 
             // Act
-            var reponse = account.CreateAccount(accountName, traType);
+            var reponse = _account.CreateAccount(accountName, traType);
 
             // Assert
             Assert.That(reponse, Is.EqualTo(false));
@@ -84,7 +80,7 @@ namespace BankApp.Test
             string accountName = "UOB";
 
             // Act
-            var reponse = account.GetAccountInfo(accountName);
+            var reponse = _account.GetAccountInfo(accountName);
 
             // Assert
             Assert.That(reponse, Is.EqualTo(6));
@@ -98,7 +94,7 @@ namespace BankApp.Test
             string accountName = "UOB";
 
             // Act
-            var reponse = account.GetAccountInfo(accountName);
+            var reponse = _account.GetAccountInfo(accountName);
 
             // Assert
             Assert.That(7, Is.Not.EqualTo(reponse));

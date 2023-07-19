@@ -1,11 +1,7 @@
 ﻿using BankApp.Data.BaseOperation;
 using BankApp.Data.EntityModels;
 using BankApp.Repository.Implementations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace BankApp.Test
 {
@@ -13,14 +9,14 @@ namespace BankApp.Test
     public class RuleRepositoryTest
     {
         private BankDbContext _dbContext { get; set; }
-        private RuleRepository rule;
+        private RuleRepository _rule;
 
         [SetUp]
         public void SetUp()
         {
             // initialize here
             _dbContext = new BankDbContext();
-            rule = new RuleRepository(_dbContext);
+            _rule = new RuleRepository(_dbContext);
         }
 
         [Test]
@@ -30,7 +26,7 @@ namespace BankApp.Test
             DateTime ruleDate = Convert.ToDateTime("2023-06-04"); string ruleName = "Rule03";
 
             // Act
-            var reponse = rule.CheckRuleExist(ruleDate, ruleName);
+            var reponse = _rule.CheckRuleExist(ruleDate, ruleName);
 
             // Assert
             Assert.That(reponse, Is.EqualTo(true));
@@ -44,7 +40,7 @@ namespace BankApp.Test
             DateTime ruleDate = Convert.ToDateTime("2023-06-04"); string ruleName = "Rule04";
 
             // Act
-            var reponse = rule.CheckRuleExist(ruleDate, ruleName);
+            var reponse = _rule.CheckRuleExist(ruleDate, ruleName);
 
             // Assert
             Assert.That(reponse, Is.EqualTo(false));
@@ -52,18 +48,76 @@ namespace BankApp.Test
         }
 
         [Test]
-        public void GetRule_Select_Rule_With_Date_and_Rule_Name_WithputExisting()
+        
+        public void GetRule_Select_Rule_With_Date_and_Rule_Name_With_Existing()
         {
             // Arrange
-            DateTime ruleDate = Convert.ToDateTime("2023-06-04"); string ruleName = "Rule03";
-            var ruleData = new Rule { Id = 3, Rate = Convert.ToDecimal(8.00), RuleDate = ruleDate, RuleName = ruleName };
+            DateTime ruleDate = Convert.ToDateTime("2023-06-04"); string ruleName = "Rule03";       
+            var ruleData = new Rule() { Id = 3, Rate = Convert.ToDecimal("8.00"), RuleDate = ruleDate, RuleName = ruleName };
+
+             // Act
+            var reponse = _rule.GetRule(ruleDate, ruleName);
+
+            var expected = JsonConvert.SerializeObject(ruleData);
+            var result = JsonConvert.SerializeObject(reponse);
+
+            // Assert
+            Assert.AreEqual(result, expected);
+
+        }
+
+        [Test]
+        public void GetRule_Select_Rule_With_Date_and_Rule_Name_With_Not_Existing()
+        {
+            // Arrange
+            DateTime ruleDate = Convert.ToDateTime("2023-06-04"); string ruleName = "Rule04";
+            var ruleData = new Rule() { Id = 3, Rate = Convert.ToDecimal("8.00"), RuleDate = ruleDate, RuleName = ruleName };
 
             // Act
-            var reponse = rule.GetRule(ruleDate, ruleName);
+            var reponse = _rule.GetRule(ruleDate, ruleName);
 
-            //Assert.AreEqual(reponse, ruleData);
-            Assert.That(reponse, Is.TypeOf<Rule>());
-            //Assert.That(reponse, Is.EqualTo(ruleData));
+            var expected = JsonConvert.SerializeObject(ruleData);
+            var result = JsonConvert.SerializeObject(reponse);
+
+            // Assert
+            Assert.That(expected, Is.Not.EqualTo(result));
+
+        }
+
+        [Test]
+        public void GetRule_Select_Rule_With_Date_With_Existing()
+        {
+            // Arrange
+            DateTime ruleDate = Convert.ToDateTime("2023-06-08"); string ruleName = "Rule03";
+            DateTime expectedRuleDate = Convert.ToDateTime("2023-06-04");
+            var ruleData = new Rule() { Id = 3, Rate = Convert.ToDecimal("8.00"), RuleDate = expectedRuleDate, RuleName = ruleName };
+
+            // Act
+            var reponse = _rule.GetRuleAccordingDate(ruleDate);
+
+            var expected = JsonConvert.SerializeObject(ruleData);
+            var result = JsonConvert.SerializeObject(reponse);
+
+            // Assert
+            Assert.That(expected, Is.EqualTo(result));
+
+        }
+
+        [Test]
+        public void GetRule_Select_Rule_With_Date_WithNot_Existing()
+        {
+            // Arrange
+            DateTime ruleDate = Convert.ToDateTime("2023-06-08"); string ruleName = "Rule04";
+            var ruleData = new Rule() { Id = 3, Rate = Convert.ToDecimal("8.00"), RuleDate = ruleDate, RuleName = ruleName };
+
+            // Act
+            var reponse = _rule.GetRuleAccordingDate(ruleDate);
+
+            var expected = JsonConvert.SerializeObject(ruleData);
+            var result = JsonConvert.SerializeObject(reponse);
+
+            // Assert
+            Assert.That(expected, Is.Not.EqualTo(result));
 
         }
 

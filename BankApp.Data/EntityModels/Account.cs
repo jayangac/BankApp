@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace BankApp.Data.EntityModels;
+﻿namespace BankApp.Data.EntityModels;
 
 public partial class Account
 {
